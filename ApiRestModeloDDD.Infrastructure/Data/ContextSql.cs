@@ -22,13 +22,21 @@ namespace ApiRestModeloDDD.Infrastructure.Data
 
         public DbSet<Produto> Produto { get; set; }
 
-        public override SaveChanges()
+        public override int SaveChanges()
         {
-            foreach (var item in collection)
+            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") !=null))
             {
+                if (entry.State == EntityState.Added)
+                {
+                    entry.Property("DataCadastro").CurrentValue = DateTime.Now;
+                }
 
+                if (entry.State == EntityState.Modified)
+                {
+                    entry.Property("DataCadastro").IsModified = false;
+                }
             }
-            return SaveChanges();
+            return base.SaveChanges();
         }
     }
 }
