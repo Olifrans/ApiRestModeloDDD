@@ -3,6 +3,6 @@
 namespace ApiRestModeloDDD.Domain.Core.Interfaces.Repositorys
 {
     public interface IRepositoryCliente : IRepositoryBase<Cliente>
-    {  
+    {
     }
 }

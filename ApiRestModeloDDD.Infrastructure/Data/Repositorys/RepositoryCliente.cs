@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ApiRestModeloDDD.Domain.Core.Interfaces.Repositorys;
+using ApiRestModeloDDD.Domain.Entitys;
 
 namespace ApiRestModeloDDD.Infrastructure.Data.Repositorys
 {
-    public class RepositoryCliente
+    public class RepositoryCliente : RepositoryBase<Cliente>, IRepositoryCliente
     {
-        
+        private readonly ContextSql _contextSql;
+
+        public RepositoryCliente(ContextSql contextSql)
+            : base(contextSql)
+        {
+            this._contextSql = contextSql;
+        }
     }
 }

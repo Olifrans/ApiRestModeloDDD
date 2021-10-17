@@ -1,39 +1,67 @@
 ﻿using ApiRestModeloDDD.Domain.Core.Interfaces.Repositorys;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ApiRestModeloDDD.Infrastructure.Data.Repositorys
 {
     public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class
     {
-        private readonly ContextSql contextSql;
+        private readonly ContextSql _contextSql;
+
+        public RepositoryBase(ContextSql contextSql)
+        {
+            this._contextSql = contextSql;
+        }
 
         public void Add(TEntity obj)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _contextSql.Set<TEntity>().Add(obj);
+                _contextSql.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public IEnumerable<TEntity> GetAll()
         {
-            throw new NotImplementedException();
+            return _contextSql.Set<TEntity>().ToList();
         }
 
         public TEntity GetById(int id)
         {
-            throw new NotImplementedException();
+            return _contextSql.Set<TEntity>().Find(id);
         }
 
         public void Remove(TEntity obj)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _contextSql.Set<TEntity>().Remove(obj);
+                _contextSql.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void Update(TEntity obj)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _contextSql.Entry(obj).State = EntityState.Modified;
+                _contextSql.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
