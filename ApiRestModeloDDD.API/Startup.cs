@@ -7,6 +7,7 @@ using Microsoft.OpenApi.Models;
 
 namespace ApiRestModeloDDD.API
 {
+    //Curso realiazad até a posição do video 02:01
     public class Startup
     {
         public Startup(IConfiguration configuration)

@@ -2,7 +2,7 @@
 using ApiRestModeloDDD.Domain.Entitys;
 using System.Collections.Generic;
 
-namespace ApiRestModeloDDD.Infrastructure.CrossCuting.Interfaces
+namespace ApiRestModeloDDD.App.Interfaces.Mappers
 {
     public interface IMapperProduto //Map construido manualmente - Realiza o mapeamento de ProdutoDto
     {

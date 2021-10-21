@@ -1,10 +1,10 @@
 ﻿using ApiRestModeloDDD.App.Dtos;
+using ApiRestModeloDDD.App.Interfaces.Mappers;
 using ApiRestModeloDDD.Domain.Entitys;
-using ApiRestModeloDDD.Infrastructure.CrossCuting.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ApiRestModeloDDD.Infrastructure.CrossCuting.Mapper
+namespace ApiRestModeloDDD.App.Mappers
 {
     public class MapperCliente : IMapperCliente
     {
@@ -13,11 +13,8 @@ namespace ApiRestModeloDDD.Infrastructure.CrossCuting.Mapper
             var dadoscliente = new Cliente()
             {
                 Id = clienteDto.Id,
-
                 Nome = clienteDto.Nome,
-
                 Sobrenome = clienteDto.Sobrenome,
-
                 Email = clienteDto.Email
             };
             //return dadoscliente;
@@ -29,11 +26,8 @@ namespace ApiRestModeloDDD.Infrastructure.CrossCuting.Mapper
             var dadosclienteDto = new ClienteDto()
             {
                 Id = cliente.Id,
-
                 Nome = cliente.Nome,
-
                 Sobrenome = cliente.Sobrenome,
-
                 Email = cliente.Email
             };
             return dadosclienteDto;
@@ -44,11 +38,8 @@ namespace ApiRestModeloDDD.Infrastructure.CrossCuting.Mapper
             var dto = clientes.Select(lista => new ClienteDto
             {
                 Id = lista.Id,
-
                 Nome = lista.Nome,
-
                 Sobrenome = lista.Sobrenome,
-
                 Email = lista.Email
             });
             //return dto;
