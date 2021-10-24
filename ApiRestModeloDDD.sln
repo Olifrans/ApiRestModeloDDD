@@ -11,17 +11,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Domain", "3-Domain", "{D3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Infrastructure", "4-Infrastructure", "{C83352E0-F0DC-474B-ACC0-0A18BF8F44C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRestModeloDDD.App", "ApiRestModeloDDD.App\ApiRestModeloDDD.App.csproj", "{BBA19E99-0EE0-4D32-8933-95CF1BDCF414}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiRestModeloDDD.App", "ApiRestModeloDDD.App\ApiRestModeloDDD.App.csproj", "{BBA19E99-0EE0-4D32-8933-95CF1BDCF414}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRestModeloDDD.Domain", "ApiRestModeloDDD.Domain\ApiRestModeloDDD.Domain.csproj", "{F58FE807-70B5-4D5E-9285-B468C6AA0CA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiRestModeloDDD.Domain", "ApiRestModeloDDD.Domain\ApiRestModeloDDD.Domain.csproj", "{F58FE807-70B5-4D5E-9285-B468C6AA0CA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRestModeloDDD.Domain.Core", "ApiRestModeloDDD.Domain.Core\ApiRestModeloDDD.Domain.Core.csproj", "{C11EEF7C-35CB-4C70-9281-756AF5EADE17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiRestModeloDDD.Domain.Core", "ApiRestModeloDDD.Domain.Core\ApiRestModeloDDD.Domain.Core.csproj", "{C11EEF7C-35CB-4C70-9281-756AF5EADE17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRestModeloDDD.API", "ApiRestModeloDDD.API\ApiRestModeloDDD.API.csproj", "{2AB19B5D-3DB3-4A76-A764-83F22D912E3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiRestModeloDDD.API", "ApiRestModeloDDD.API\ApiRestModeloDDD.API.csproj", "{2AB19B5D-3DB3-4A76-A764-83F22D912E3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRestModeloDDD.Domain.Services", "ApiRestModeloDDD.Domain.Services\ApiRestModeloDDD.Domain.Services.csproj", "{59CB566E-7CD2-43C3-92EC-CC244E7E7B1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiRestModeloDDD.Domain.Services", "ApiRestModeloDDD.Domain.Services\ApiRestModeloDDD.Domain.Services.csproj", "{59CB566E-7CD2-43C3-92EC-CC244E7E7B1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRestModeloDDD.Infrastructure", "ApiRestModeloDDD.Infrastructure\ApiRestModeloDDD.Infrastructure.csproj", "{7B27DE80-29AD-45BE-BAB7-62C31EF67FFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiRestModeloDDD.Infrastructure", "ApiRestModeloDDD.Infrastructure\ApiRestModeloDDD.Infrastructure.csproj", "{7B27DE80-29AD-45BE-BAB7-62C31EF67FFE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F58FE807-70B5-4D5E-9285-B468C6AA0CA8} = {F58FE807-70B5-4D5E-9285-B468C6AA0CA8}
+		{C11EEF7C-35CB-4C70-9281-756AF5EADE17} = {C11EEF7C-35CB-4C70-9281-756AF5EADE17}
+		{BBA19E99-0EE0-4D32-8933-95CF1BDCF414} = {BBA19E99-0EE0-4D32-8933-95CF1BDCF414}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

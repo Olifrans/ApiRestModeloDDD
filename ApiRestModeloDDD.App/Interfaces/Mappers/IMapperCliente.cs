@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ApiRestModeloDDD.App.Interfaces.Mappers
 {
-    public interface IMapperCliente  //Map construido manualmente - Realiza o mapeamento de ClienteDto
+    public interface IMapperCliente // //Map construido manualmente - Realiza o mapeamento de ClienteDto
     {
         IMapperCliente MapperDtoToEntity(ClienteDto clienteDto);
 

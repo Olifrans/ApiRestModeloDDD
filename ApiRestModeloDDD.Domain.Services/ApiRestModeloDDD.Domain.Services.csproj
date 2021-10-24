@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ApiRestModeloDDD.Domain.Core\ApiRestModeloDDD.Domain.Core.csproj" />
-    <ProjectReference Include="..\ApiRestModeloDDD.Infrastructure\ApiRestModeloDDD.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
