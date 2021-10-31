@@ -12,7 +12,13 @@ using Microsoft.OpenApi.Models;
 
 namespace ApiRestModeloDDD.API
 {
-    //Curso realiazad até a posição do video 02:48
+
+    //Curso realiazad até a posição do video 02:49
+    //Comando Doker
+    //https://medium.com/@djesus.net/implementando-na-pr%C3%A1tica-rest-api-com-conceitos-de-ddd-netcore-2160291a44b7
+    // docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
+    //https://github.com/djesusnet/ModeloDDD
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -25,8 +31,14 @@ namespace ApiRestModeloDDD.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = Configuration["SqlConnection:SqlConnectionStrings"];
-            services.AddDbContext<ContextSql>(options => options.UseSqlServer(connection));
+            //var connection = Configuration["SqlConnection:SqlConnectionStrings"];
+            //services.AddDbContext<ContextSql>(options => options.UseSqlServer(connection));
+
+            services.AddDbContext<ContextSql>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("SqlConnectionStrings")));
+
+
             services.AddControllers();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
